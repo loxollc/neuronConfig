@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+    <link rel="stylesheet" href="{% static 'css/Bootstrapcss/bootstrap.css.map' %}">
+    <link rel="stylesheet" href="{% static 'css/Bootstrapcss/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+
+
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>Neuron Configuration</title>
+    {% endblock %}
+
+</head>
+
+<body>
+<form class="configuration" id="inputConfiguration">
+    <h4>Basic Configuration</h4>
+    <hr>
+  <div class="form-group">
+    <label for="serialNumber">Neuron Serial Number:</label>
+    <input type="number" class="form-control" id="serialNumber" placeholder="123456789">
+  </div>
+  <div class="form-group">
+    <label for="configurationID">Configuration ID(UID for this configuration and Version)</label>
+    <input type="number" class="form-control" id="configurationID" placeholder="101112131415">
+  </div>
+    <div class="form-group">
+    <label for="hardwareNumber">Hardware Model Number:</label>
+    <input type="text" class="form-control" id="hardwareNumber" placeholder="123456789">
+  </div>
+    <div class="form-group">
+    <label for="neuronName">Neuron Name:</label>
+    <input type="text" class="form-control" id="neuronName" placeholder="Neuron Doe">
+  </div>
+  <div class="form-group">
+    <label for="customerID">Customer ID:</label>
+    <input type="text" class="form-control" id="customerID" placeholder="John Doe">
+  </div>
+    <div class="form-group">
+    <label for="customerSiteID">Customer Site ID:</label>
+    <input type="text" class="form-control" id="customerSiteID" placeholder="The Great Unkown">
+  </div>
+</form>
+
+<form class="configuration" id="featuresConfiguration">
+    <h4>8-PORT ANALOG/DIGITAL INPUTS</h4>
+    <hr>
+  <div class="form-group">
+    <label for="sampleInterval">Sample Interval ms:</label>
+    <input type="number" class="form-control" id="sampleInterval" placeholder="35">
+  </div>
+
+  <div id="voltageInputs">
+      <h6>Voltage Sensing Inputs</h6>
+      <hr>
+      <div class="customizeInput" id="voltageInput1">
+          <label>VRange1: </label>
+                <label><input type = "radio" class="radio-inline" name="vrange1">(0-5)</label>
+                <label><input type = "radio" class="radio-inline" name="vrange1">(1-10)</label>
+            <div class="radio">
+                <label>VMode:</label>
+                <label><input type = "radio" class="radio-inline" name="vmode1">VDC</label>
+                <label><input type = "radio" class="radio-inline" name="vmode1">RMS</label>
+            </div>
+          <input type="text" class="form-control" id="v1name" placeholder="ID">
+              <hr>
+      </div>
+        <div class= "customizeInput" id="voltageInput2">
+          <label>VRange2: </label>
+                <label><input type = "radio" class="radio-inline" name="vrange2">(0-5)</label>
+                <label><input type = "radio" class="radio-inline" name="vrange2">(1-10)</label>
+            <div class="radio">
+                <label>VMode:</label>
+                <label><input type = "radio" class="radio-inline" name="vmode2">VDC</label>
+                <label><input type = "radio" class="radio-inline" name="vmode2">RMS</label>
+            </div>
+            <input type="text" class="form-control" id="v2name" placeholder="ID">
+          <hr>
+      </div>
+      <div class="customizeInput" id="voltageInput3">
+          <label>VRange3: </label>
+                <label><input type = "radio" class="radio-inline" name="vrange3">(0-5)</label>
+                <label><input type = "radio" class="radio-inline" name="vrange3">(1-10)</label>
+            <div class="radio">
+                <label>VMode:</label>
+                <label><input type = "radio" class="radio-inline" name="vmode3">VDC</label>
+                <label><input type = "radio" class="radio-inline" name="vmode3">RMS</label>
+            </div>
+          <input type="text" class="form-control" id="v3name" placeholder="ID">
+          <hr>
+      </div>
+      <div class="customizeInput" id="voltageInput4">
+          <label>VRange4: </label>
+                <label><input type = "radio" class="radio-inline" name="vrange4">(0-5)</label>
+                <label><input type = "radio" class="radio-inline" name="vrange4">(1-10)</label>
+            <div class="radio">
+                <label>VMode:</label>
+                <label><input type = "radio" class="radio-inline" name="vmode4">VDC</label>
+                <label><input type = "radio" class="radio-inline" name="vmode4">RMS</label>
+            </div>
+          <input type="text" class="form-control" id="v4name" placeholder="ID">
+          <hr>
+      </div>
+  </div>
+    <div  id="currentInputs">
+      <h6>Current Sensing Inputs</h6>
+       <div class="customizeInput" id="currentInput1">
+          <label>IRange1: </label>
+                <label><input type = "radio" class="radio-inline" name="irange1"> 0-5 </label>
+                <label><input type = "radio" class="radio-inline" name="irange1"> 1-10 </label>
+                 <label><input type = "radio" class="radio-inline" name="irange1"> 4-20 </label>
+           <input type="text" class="form-control" id="c1name" placeholder="ID">
+          <hr>
+
+      </div>
+       <div class="customizeInput" id="currentInput2">
+          <label>IRange2: </label>
+                <label><input type = "radio" class="radio-inline" name="irange2"> 0-5 </label>
+                <label><input type = "radio" class="radio-inline" name="irange2"> 1-10 </label>
+                 <label><input type = "radio" class="radio-inline" name="irange2"> 4-20 </label>
+           <input type="text" class="form-control" id="c2name" placeholder="ID">
+          <hr>
+
+      </div>
+       <div class="customizeInput" id="currentInput3">
+          <label>IRange3: </label>
+                <label><input type = "radio" class="radio-inline" name="irange3"> 0-5 </label>
+                <label><input type = "radio" class="radio-inline" name="irange3"> 1-10 </label>
+                 <label><input type = "radio" class="radio-inline" name="irange3"> 4-20 </label>
+           <input type="text" class="form-control" id="c3name" placeholder="ID">
+          <hr>
+
+      </div>
+       <div class="customizeInput" id="currentInput4">
+          <label>IRange4: </label>
+                <label><input type = "radio" class="radio-inline" name="irange4"> 0-5 </label>
+                <label><input type = "radio" class="radio-inline" name="irange4"> 1-10 </label>
+                 <label><input type = "radio" class="radio-inline" name="irange4"> 4-20 </label>
+           <input type="text" class="form-control" id="c4name" placeholder="ID">
+           <hr>
+      </div>
+    </div>
+    <div id="binary">
+      <h6>Binary Inputs - Select digital input numbers</h6>
+      <hr>
+      <div class="radio" id="binaryInputs">
+          <label><input type="checkbox">1</label>
+          <label><input type="checkbox">2</label>
+          <label><input type="checkbox">3</label>
+          <label><input type="checkbox">4</label>
+           <label><input type="checkbox">5</label>
+          <label><input type="checkbox">6</label>
+          <label><input type="checkbox">7</label>
+          <label><input type="checkbox">8</label>
+      </div>
+    </div>
+
+
+
+
+  </div>
+</form>
+
+{% load static %}
+<!-- <script src="{%static 'js/index.js' %}"></script> -->
+</body>
+</html>
